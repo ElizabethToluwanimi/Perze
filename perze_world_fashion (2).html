@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERZE WORLD Fashion | Official Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        perze: {
+                            dark: '#0a0a0a',
+                            card: '#141414',
+                            accent: '#e50914',
+                            gold: '#d4af37',
+                            light: '#f5f5f5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-perze-accent selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-perze-accent text-white text-xs tracking-widest py-2 text-center font-medium px-4">
+        WORLDWIDE EXPRESS SHIPPING • COMPLIMENTARY LUXURY PACKAGING ON ORDERS OVER $200 • <span class="underline cursor-pointer">SHOP THE DROP</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-perze-dark/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-neutral-300 hover:text-white">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-white uppercase">
+                    Perze <span class="text-perze-accent italic font-sans font-light">World</span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#home" class="text-white hover:text-perze-accent transition">Home</a>
+                <a href="#collection" class="text-neutral-400 hover:text-white transition">Collection</a>
+                <a href="#lookbook" class="text-neutral-400 hover:text-white transition">Lookbook</a>
+                <a href="#about" class="text-neutral-400 hover:text-white transition">About</a>
+            </nav>
+
+            <!-- Utility Actions -->
+            <div class="flex items-center space-x-5 text-lg">
+                <button id="search-btn" class="text-neutral-300 hover:text-white transition">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button id="wishlist-btn" class="relative text-neutral-300 hover:text-white transition hidden sm:block">
+                    <i class="fa-regular fa-heart"></i>
+                    <span id="wishlist-count" class="absolute -top-2 -right-2 bg-perze-accent text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+                <button id="cart-btn" class="relative text-neutral-300 hover:text-white transition">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-perze-accent text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden lg:hidden">
+        <div class="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-perze-card border-r border-neutral-800 p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-8">
+                    <span class="font-serif text-xl font-bold tracking-wider text-white uppercase">Perze World</span>
+                    <button id="close-mobile-menu" class="text-2xl text-neutral-400 hover:text-white">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-5 uppercase tracking-widest text-sm font-medium">
+                    <a href="#home" class="mobile-link text-white hover:text-perze-accent">Home</a>
+                    <a href="#collection" class="mobile-link text-neutral-400 hover:text-white">Collection</a>
+                    <a href="#lookbook" class="mobile-link text-neutral-400 hover:text-white">Lookbook</a>
+                    <a href="#about" class="mobile-link text-neutral-400 hover:text-white">About Us</a>
+                </nav>
+            </div>
+            <div class="text-xs text-neutral-500 uppercase tracking-widest">
+                &copy; 2026 Perze World Fashion. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-neutral-950">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop" alt="Hero background" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-perze-dark via-transparent to-perze-dark/60"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <span class="text-perze-accent tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-4 inline-block">Autumn / Winter 2026 Collection</span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6">
+                Redefining Modern Avant-Garde
+            </h1>
+            <p class="text-neutral-300 max-w-xl mx-auto text-base sm:text-lg mb-8 font-light">
+                Immersive silhouettes crafted with uncompromising artisanal quality and visionary tailoring.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#collection" class="w-full sm:w-auto px-8 py-4 bg-white text-perze-dark uppercase text-xs tracking-widest font-bold hover:bg-neutral-200 transition">
+                    Explore Collection
+                </a>
+                <a href="#lookbook" class="w-full sm:w-auto px-8 py-4 border border-white/30 text-white uppercase text-xs tracking-widest font-semibold hover:bg-white/10 transition">
+                    View Lookbook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Values Banner -->
+    <section class="border-y border-neutral-800 bg-perze-card py-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-gem text-perze-accent text-2xl mb-3"></i>
+                <h3 class="uppercase text-xs font-bold tracking-widest mb-1 text-white">Artisanal Craftsmanship</h3>
+                <p class="text-neutral-400 text-sm font-light">Every stitch built to outlive seasons and trends.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-globe text-perze-accent text-2xl mb-3"></i>
+                <h3 class="uppercase text-xs font-bold tracking-widest mb-1 text-white">Sustainable Luxury</h3>
+                <p class="text-neutral-400 text-sm font-light">Responsibly sourced organic fabrics and ethical ateliers.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-box-open text-perze-accent text-2xl mb-3"></i>
+                <h3 class="uppercase text-xs font-bold tracking-widest mb-1 text-white">Bespoke Delivery</h3>
+                <p class="text-neutral-400 text-sm font-light">Signature unboxing experience delivered worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-perze-accent text-xs tracking-[0.3em] uppercase font-semibold">Curated Portfolio</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">Featured Arrivals</h2>
+            </div>
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap gap-2 mt-6 md:mt-0 text-xs uppercase tracking-widest">
+                <button class="filter-btn active px-4 py-2 bg-white text-perze-dark font-bold transition" data-filter="all">All</button>
+                <button class="filter-btn px-4 py-2 bg-neutral-900 text-neutral-400 hover:text-white transition" data-filter="outerwear">Outerwear</button>
+                <button class="filter-btn px-4 py-2 bg-neutral-900 text-neutral-400 hover:text-white transition" data-filter="apparel">Apparel</button>
+                <button class="filter-btn px-4 py-2 bg-neutral-900 text-neutral-400 hover:text-white transition" data-filter="accessories">Accessories</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Dynamically populated via JS -->
+        </div>
+    </section>
+
+    <!-- Lookbook Section -->
+    <section id="lookbook" class="py-24 bg-neutral-950 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-perze-accent text-xs tracking-[0.3em] uppercase font-semibold">Visual Narrative</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">The AW26 Lookbook</h2>
+                <p class="text-neutral-400 text-sm mt-3 font-light">Explore styling compositions curated by our creative directors.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop" alt="Look 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <span class="text-perze-accent text-xs tracking-widest uppercase font-semibold">Look 01</span>
+                        <h3 class="text-white font-serif text-xl font-bold mt-1">The Structured Trench</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop" alt="Look 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <span class="text-perze-accent text-xs tracking-widest uppercase font-semibold">Look 02</span>
+                        <h3 class="text-white font-serif text-xl font-bold mt-1">Monochrome Tailoring</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop" alt="Look 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <span class="text-perze-accent text-xs tracking-widest uppercase font-semibold">Look 03</span>
+                        <h3 class="text-white font-serif text-xl font-bold mt-1">Noir Evening Edit</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-perze-card border-t border-neutral-800">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <span class="text-perze-accent text-xs tracking-[0.3em] uppercase font-semibold">Our Philosophy</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white mt-2 mb-6">Built For The Visionaries</h2>
+            <p class="text-neutral-300 text-lg font-light leading-relaxed mb-8">
+                Perze World is an intersection of uncompromising architectural precision and fluid modern lifestyle apparel. We believe clothing should function not merely as attire, but as armor for personal expression.
+            </p>
+            <div class="inline-block border-b border-white text-xs uppercase tracking-[0.3em] pb-1 font-semibold text-white">
+                Discover The Atelier
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-800 py-16 text-neutral-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+                <a href="#" class="font-serif text-2xl font-bold tracking-wider text-white uppercase block mb-4">
+                    Perze <span class="text-perze-accent italic font-sans font-light">World</span>
+                </a>
+                <p class="text-xs font-light leading-relaxed mb-6">
+                    Redefining luxury fashion with state-of-the-art tailoring and sustainable consciousness.
+                </p>
+                <div class="flex space-x-4 text-lg text-white">
+                    <a href="#" class="hover:text-perze-accent transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-perze-accent transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-perze-accent transition"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white uppercase text-xs tracking-widest font-bold mb-4">Navigation</h4>
+                <ul class="space-y-2 text-xs tracking-wider">
+                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#collection" class="hover:text-white transition">Collection</a></li>
+                    <li><a href="#lookbook" class="hover:text-white transition">Lookbook</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white uppercase text-xs tracking-widest font-bold mb-4">Customer Care</h4>
+                <ul class="space-y-2 text-xs tracking-wider">
+                    <li><a href="#" class="hover:text-white transition">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-white transition">Secure Payments</a></li>
+                    <li><a href="#" class="hover:text-white transition">Size Guide</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white uppercase text-xs tracking-widest font-bold mb-4">Newsletter</h4>
+                <p class="text-xs font-light mb-4">Subscribe to receive priority access to limited drops and private sales.</p>
+                <form id="newsletter-form" class="flex flex-col space-y-2">
+                    <input type="email" placeholder="Enter your email" required class="bg-neutral-900 border border-neutral-800 px-4 py-3 text-xs text-white focus:outline-none focus:border-perze-accent">
+                    <button type="submit" class="bg-white text-perze-dark uppercase text-xs tracking-widest font-bold py-3 hover:bg-neutral-200 transition">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-neutral-900 text-center text-xs tracking-widest text-neutral-600">
+            &copy; 2026 PERZE WORLD FASHION. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <!-- Cart Drawer Modal -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex justify-end">
+        <div class="w-full max-w-md bg-perze-card border-l border-neutral-800 h-full flex flex-col justify-between p-6">
+            <div>
+                <div class="flex items-center justify-between pb-6 border-b border-neutral-800">
+                    <h3 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Shopping Bag (<span id="drawer-cart-count">0</span>)</h3>
+                    <button id="close-cart" class="text-xl text-neutral-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div id="cart-items-container" class="py-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                    <!-- Cart items populated via JS -->
+                </div>
+            </div>
+            <div class="border-t border-neutral-800 pt-6">
+                <div class="flex justify-between items-center mb-4 text-sm font-semibold">
+                    <span class="text-neutral-400 uppercase tracking-wider text-xs">Subtotal</span>
+                    <span id="cart-subtotal" class="text-white">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-white text-perze-dark uppercase text-xs tracking-widest font-bold py-4 hover:bg-neutral-200 transition">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-white text-perze-dark px-6 py-3 text-xs uppercase tracking-widest font-bold shadow-2xl translate-y-24 opacity-0 transition-all duration-300 z-50">
+        Item added to shopping bag
+    </div>
+
+    <!-- Application JavaScript -->
+    <script>
+        const products = [
+            { id: 1, name: "Architectural Wool Trench", category: "outerwear", price: 420, image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" },
+            { id: 2, name: "Minimalist Structured Blazer", category: "outerwear", price: 310, image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" },
+            { id: 3, name: "Oversized Cashmere Knit", category: "apparel", price: 240, image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" },
+            { id: 4, name: "Pleated Noir Trousers", category: "apparel", price: 195, image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop" },
+            { id: 5, name: "Leather Crossbody Atelier Bag", category: "accessories", price: 290, image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop" },
+            { id: 6, name: "Silk Blend Statement Scarf", category: "accessories", price: 110, image: "https://images.unsplash.com/photo-1520975954732-35dd22299614?q=80&w=800&auto=format&fit=crop" },
+            { id: 7, name: "Heavyweight Boxy Hoodie", category: "apparel", price: 165, image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=800&auto=format&fit=crop" },
+            { id: 8, name: "Structured Wool Overcoat", category: "outerwear", price: 480, image: "https://images.unsplash.com/photo-1543076447-215ad9ba6923?q=80&w=800&auto=format&fit=crop" }
+        ];
+
+        let cart = [];
+        let wishlist = [];
+
+        // DOM Elements
+        const productGrid = document.getElementById('product-grid');
+        const cartBtn = document.getElementById('cart-btn');
+        const closeCart = document.getElementById('close-cart');
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartCount = document.getElementById('cart-count');
+        const drawerCartCount = document.getElementById('drawer-cart-count');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const wishlistBtn = document.getElementById('wishlist-btn');
+        const wishlistCount = document.getElementById('wishlist-count');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const toast = document.getElementById('toast');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Render Products
+        function renderProducts(filter = 'all') {
+            productGrid.innerHTML = '';
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+            
+            filtered.forEach(product => {
+                const isWishlisted = wishlist.includes(product.id);
+                const card = document.createElement('div');
+                card.className = 'group flex flex-col bg-perze-card border border-neutral-800 overflow-hidden';
+                card.innerHTML = `
+                    <div class="relative h-[380px] overflow-hidden bg-neutral-900">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <button onclick="toggleWishlist(${product.id})" class="absolute top-4 right-4 w-9 h-9 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-perze-accent transition">
+                            <i class="${isWishlisted ? 'fa-solid text-perze-accent' : 'fa-regular'} fa-heart"></i>
+                        </button>
+                        <div class="absolute inset-x-0 bottom-4 px-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button onclick="addToCart(${product.id})" class="w-full bg-white text-perze-dark font-bold text-xs uppercase tracking-widest py-3 hover:bg-neutral-200 transition shadow-lg">
+                                Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-[10px] text-neutral-400 uppercase tracking-widest">${product.category}</span>
+                            <h3 class="font-serif text-base font-bold text-white mt-1">${product.name}</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-white mt-3">$${product.price}.00</span>
+                    </div>
+                `;
+                productGrid.appendChild(card);
+            });
+        }
+
+        // Filter Event Listeners
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-white', 'text-perze-dark', 'font-bold');
+                    b.classList.add('bg-neutral-900', 'text-neutral-400');
+                });
+                e.target.classList.add('active', 'bg-white', 'text-perze-dark', 'font-bold');
+                e.target.classList.remove('bg-neutral-900', 'text-neutral-400');
+                renderProducts(e.target.getAttribute('data-filter'));
+            });
+        });
+
+        // Cart Actions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            updateCartUI();
+            showToast('Added to shopping bag');
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalCount;
+            drawerCartCount.textContent = totalCount;
+
+            cartItemsContainer.innerHTML = '';
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-xs text-neutral-500 uppercase tracking-widest text-center py-12">Your shopping bag is empty.</p>';
+            } else {
+                cart.forEach(item => {
+                    subtotal += item.price * item.quantity;
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'flex items-center justify-between pb-4 border-b border-neutral-900';
+                    itemEl.innerHTML = `
+                        <div class="flex items-center space-x-4">
+                            <img src="${item.image}" alt="${item.name}" class="w-14 h-16 object-cover bg-neutral-900">
+                            <div>
+                                <h4 class="font-serif text-sm font-bold text-white">${item.name}</h4>
+                                <span class="text-xs text-neutral-400">$${item.price} x ${item.quantity}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="text-neutral-500 hover:text-perze-accent text-sm"><i class="fa-solid fa-trash-can"></i></button>
+                    `;
+                    cartItemsContainer.appendChild(itemEl);
+                });
+            }
+            cartSubtotal.textContent = `$${subtotal}.00`;
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        // Wishlist Actions
+        function toggleWishlist(productId) {
+            if (wishlist.includes(productId)) {
+                wishlist = wishlist.filter(id => id !== productId);
+                showToast('Removed from wishlist');
+            } else {
+                wishlist.push(productId);
+                showToast('Added to wishlist');
+            }
+            wishlistCount.textContent = wishlist.length;
+            renderProducts(document.querySelector('.filter-btn.active').getAttribute('data-filter'));
+        }
+
+        // Toast Feedback
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 2500);
+        }
+
+        // Drawer Controls
+        cartBtn.addEventListener('click', () => cartDrawer.classList.remove('hidden'));
+        closeCart.addEventListener('click', () => cartDrawer.classList.add('hidden'));
+
+        // Mobile Menu Controls
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        closeMobileMenu.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Newsletter Handler
+        document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('Successfully subscribed to Perze World');
+            e.target.reset();
+        });
+
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            if (cart.length === 0) {
+                showToast('Your bag is empty');
+                return;
+            }
+            showToast('Redirecting to secure checkout...');
+        });
+
+        // Initial render
+        renderProducts();
+    </script>
+</body>
+</html>
